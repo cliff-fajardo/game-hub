@@ -8,7 +8,7 @@ import GameCardContainer from './GameCardContainer';
 
 const GameGrid = () => {
 
-    const { games, error, isLoading } = useGames();
+    const { data, error, isLoading } = useGames();
     const skeletons = [1, 2, 3, 4, 5, 6];
 
     return (
@@ -16,16 +16,18 @@ const GameGrid = () => {
             {error && <Text>{error}</Text>}
             <SimpleGrid columns={{ sm: 1, md: 2, lg: 5 }} padding={"10px"} gap={"10px"}>
                 {isLoading && skeletons.map((skeleton) => (
-                    <GameCardContainer>
-                        <GameCardSkeleton key={skeleton} />
+                    <GameCardContainer key={skeleton}>
+                        <GameCardSkeleton />
                     </GameCardContainer>
                 ))}
                 {
-                    games.map((game) => (
-                        <GameCardContainer>
-                            <GameCard key={game.id} game={game} />
-                        </GameCardContainer>
-                    ))}
+                    data.map((g) => {
+                        return (
+                            <GameCardContainer key={g.id}>
+                                <GameCard game={g} />
+                            </GameCardContainer>
+                        );
+                    })}
             </SimpleGrid>
         </>
     )
