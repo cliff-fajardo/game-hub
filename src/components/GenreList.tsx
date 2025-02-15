@@ -4,9 +4,10 @@ import { HStack, List, Text, Image, Spinner, Button, Link } from '@chakra-ui/rea
 
 interface Props {
     onSelectedGenre: (genre: Genre) => void;
+    selectedGenre: Genre | null;
 }
 
-const GenreList = ({ onSelectedGenre }: Props) => {
+const GenreList = ({ onSelectedGenre, selectedGenre }: Props) => {
 
     const { data, isLoading, error } = useGenres();
 
@@ -20,7 +21,7 @@ const GenreList = ({ onSelectedGenre }: Props) => {
                 <List.Item key={genre.id} paddingY='5px' listStyleType={'none'}>
                     <HStack>
                         <Image boxSize='32px' borderRadius={8} src={getCroppedImageUrl(genre.image_background)} />
-                        <Button variant={'plain'} onClick={() => onSelectedGenre(genre)} fontSize='lg'>{genre.name}</Button>
+                        <Button fontWeight={genre.id === selectedGenre?.id ? 'bold' : 'normal'} variant={'plain'} onClick={() => onSelectedGenre(genre)} fontSize='lg'>{genre.name}</Button>
                     </HStack>
                 </List.Item>))}
 
