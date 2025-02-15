@@ -16,7 +16,7 @@ function App() {
     <GridItem area='nav'>
       <NavBar />
     </GridItem>
-    <GridItem area='aside' paddingX={5}>
+    <GridItem area='aside' paddingX={5} display={{ base: "none", lg: "block" }}>
       <GenreList />
     </GridItem>
     <GridItem area='main'>
