@@ -1,5 +1,5 @@
-import { Flex, HStack, Image } from '@chakra-ui/react'
-import logo from '../assets/logo/logo.webp'
+import { Flex, Image } from '@chakra-ui/react'
+import logo from '../assets/logo.webp'
 import ColorModeSwitch from './ColorModeSwitch'
 import SearchInput from './SearchInput'
 
