@@ -16,9 +16,9 @@ const SearchInput = ({ onSearch }: Props) => {
         <form onSubmit={(event) => {
             event.preventDefault(); //prevent form submission to server
             if (ref.current) onSearch(ref.current.value);
-        }}>
-            <InputGroup flex={1} startElement={<BsSearch />}>
-                <Input size={'lg'} style={{ width: '100%' }} ref={ref} borderRadius={20} variant={'subtle'} placeholder='Search games...' />
+        }} style={{ flex: 1 }}>
+            <InputGroup width="100%" paddingRight={5} startElement={<BsSearch />}>
+                <Input width="100%" size={'lg'} ref={ref} borderRadius={20} variant={'subtle'} placeholder='Search games...' />
             </InputGroup>
         </form>
     )

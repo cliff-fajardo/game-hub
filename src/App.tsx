@@ -29,14 +29,19 @@ function App() {
       base: '1fr',
       lg: '250px 1fr'
     }}>
+
+    {/* Top Nav */}
     <GridItem area='nav'>
       <NavBar onSearch={(searchText) => setGameQuery({ ...gameQuery, searchText })} />
     </GridItem>
+
+    {/* Left Side Panel */}
     <GridItem area='aside' paddingX={5} display={{ base: "none", lg: "block" }}>
       <GenreList selectedGenre={gameQuery.genre} onSelectedGenre={(genre) => setGameQuery({ ...gameQuery, genre })} />
     </GridItem>
-    <GridItem area='main'>
 
+    {/* Main Game Card Section */}
+    <GridItem area='main'>
       <Box paddingLeft={10}>
         <GameHeading gameQuery={gameQuery} />
         <HStack gap={5} marginBottom={5}>
