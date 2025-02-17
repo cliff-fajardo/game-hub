@@ -1,5 +1,5 @@
 # GAME HUB
-Game Hub is a demo application that allows users to view and search for video games.  It leverages Chakra UI styling components and Rawg.io for data.  This project was completed by following Coding with Mosh React course.
+Game Hub is a responsive React application that allows users to view and search for video games.  It leverages Chakra UI styling components and Rawg.io for data.  This project was completed by following Coding with Mosh React course.
 
 ## External Dependencies
 - [Chakra UI](https://chakra-ui.com/) for style components
